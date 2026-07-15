@@ -1,6 +1,7 @@
-/data
-/logs
-models/
+/data/
+/logs/
+/models/
+/docs/
 .idea
 *.pyc
 _pycache_/
