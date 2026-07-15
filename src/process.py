@@ -53,6 +53,12 @@ def process():
     vocab_list = ['<unk>'] + list(vocab_set)
     print(f'词表大小:{len(vocab_list)}')
 
+    vocab_path = config.PROCESSED_DATA_DIR / 'vocab.txt'
+    with open(vocab_path, 'w', encoding='utf-8') as f:
+        for word in vocab_list:
+            f.write(word + '\n')
+    print(f"词表已保存至: {vocab_path}")
+
     word2index = {word: index for index, word in enumerate(vocab_list)}
 
     # 构建训练集
