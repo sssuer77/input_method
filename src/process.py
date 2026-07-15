@@ -59,13 +59,13 @@ def process():
     train_dataset = build_dataset(train_sentences, word2index)
 
     # 保存训练集
-    pd.DataFrame(train_dataset).to_json(config.PROCESSED_DIR / 'indexed_train.jsonl', lines=True, orient='records')
+    pd.DataFrame(train_dataset).to_json(config.PROCESSED_DATA_DIR / 'indexed_train.jsonl', lines=True, orient='records')
 
     # 构建测试集
     test_dataset = build_dataset(test_sentences, word2index)
 
     # 保存测试集
-    pd.DataFrame(test_dataset).to_json(config.PROCESSED_DIR / 'indexed_test.jsonl', lines=True, orient='records')
+    pd.DataFrame(test_dataset).to_json(config.PROCESSED_DATA_DIR / 'indexed_test.jsonl', lines=True, orient='records')
 
     print("数据处理完成")
 
